@@ -9,4 +9,16 @@ export default defineConfig({
             autoImport: true,  
         })
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (id.includes('node_modules')) {P
+                        return 'vendor';
+                    }
+                }
+            }
+        },
+        chunkSizeWarningLimit: 1000,
+    }
 });
