@@ -96,7 +96,7 @@
    * and set projectFolderMaxDepth to a large number.
    */
   // "projectFolderMinDepth": 2,
-  // "projectFolderMaxDepth": 2,
+  "projectFolderMaxDepth": 3,
 
   /**
    * Today the npmjs.com registry enforces fairly strict naming rules for packages, but in the early
@@ -336,16 +336,16 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
-    // {
+    {
     //   /**
     //    * The NPM package name of the project (must match package.json)
     //    */
-    //   "packageName": "my-app",
+      "packageName": "plb-ui",
     // 
     //   /**
     //    * The path to the project folder, relative to the rush.json config file.
     //    */
-    //   "projectFolder": "apps/my-app",
+      "projectFolder": "src/plb-ui"
     // 
     //   /**
     //    * This field is only used if "subspacesEnabled" is true in subspaces.json.
@@ -439,6 +439,6 @@
     //   "projectFolder": "tools/my-toolchain",
     //   "reviewCategory": "tools",
     //   "tags": [ "tools" ]
-    // }
+    }
   ]
 }
