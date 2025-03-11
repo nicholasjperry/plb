@@ -1,0 +1,6 @@
+@plb_api_HostAddress = http://localhost:5002
+
+GET {{plb_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

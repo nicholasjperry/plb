@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plb-api", "plb-api.csproj", "{AD84D84A-CB0C-45A6-A1B6-45C13F4EACBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD84D84A-CB0C-45A6-A1B6-45C13F4EACBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD84D84A-CB0C-45A6-A1B6-45C13F4EACBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD84D84A-CB0C-45A6-A1B6-45C13F4EACBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD84D84A-CB0C-45A6-A1B6-45C13F4EACBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F54A3C1C-D556-4E87-9596-7CF71BED2809}
+	EndGlobalSection
+EndGlobal
