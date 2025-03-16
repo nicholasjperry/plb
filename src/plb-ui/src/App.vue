@@ -127,7 +127,7 @@ function toggleRegisterDialog() {
 }
 
 function handleRegister() {
-    authStore.registerUser();
+    authStore.registerUser(authStore.user.email, authStore.user.password);
 }
 
 function toggleShowRegisterPassword() {
