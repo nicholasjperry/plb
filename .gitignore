@@ -121,5 +121,13 @@ dist-storybook/
 .cache/
 .heft/
 
-# plb-api
-src/plb-api/
+# Visual Studio
+src/plb-api/bin/
+src/plb-api/obj/
+src/plb-api/.vs/
+src/plb-api/Migrations/
+src/plb-api/TestResults/
+src/plb-api/*.suo
+src/plb-api/*.user
+src/plb-api/*.coverage
+
