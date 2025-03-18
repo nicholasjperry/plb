@@ -16,17 +16,39 @@ export const useAuthStore = defineStore('auth', () => {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
             const token = await user.getIdToken();
-            // await sendTokenToBackend(token, email);
+            await sendTokenToBackend(email, token);
         }
         catch(err) {
             console.error(err);
         }
     }
 
-    // TODO: work on getting the API url next...
-    // async function sendTokenToBackend() {
-    //     const result = await fetch('https://')
-    // }
+    async function sendTokenToBackend(email: string, token: string) {
+        try {
+            // TODO: setup API endpoint
+            const response = await fetch('https://localhost:7110/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ email }),
+            });
+    
+            const result = await response.json();
+    
+            if (result.ok) {
+                console.log(result);
+                return result;
+            }
+            else
+                throw new Error('Registration failed.');
+        }
+        catch (err) {
+            console.error('Error during registration: ', err);
+            throw err;
+        }
+    }
 
     return {
         loginUser,
