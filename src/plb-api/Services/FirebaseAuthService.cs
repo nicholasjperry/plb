@@ -21,5 +21,21 @@ namespace plb_api.Services
 
             _firebaseAuth = FirebaseAuth.DefaultInstance;
         }
+    public async Task<FirebaseToken?> VerifyIdToken(string idToken)
+        {
+            try
+            {
+                var decodedToken = await _firebaseAuth.VerifyIdTokenAsync(idToken);
+                return decodedToken;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+    public async Task<UserRecord> GetUserByUidAsync(string uid)
+        {
+            return await _firebaseAuth.GetUserAsync(uid);
+        }
     }
 }
