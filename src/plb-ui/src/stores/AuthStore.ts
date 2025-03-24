@@ -26,7 +26,7 @@ export const useAuthStore = defineStore('auth', () => {
     async function sendTokenToBackend(email: string, token: string) {
         try {
             // TODO: setup API endpoint
-            const response = await fetch('https://localhost:7110/api/auth/register', {
+            const response = await fetch('https://localhost:7110/api/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
