@@ -14,10 +14,25 @@ namespace plb_api.Controllers
             _firebaseAuthService = firebaseAuthService;
         }
 
-        //[HttpPost("register")]
-        //public async Task<IActionResult> RegisterUser([FromHeader] string authorization)
-        //{
+        [HttpPost("register")]
+        public async Task<IActionResult> RegisterUser([FromHeader] string authorization)
+        {
+            var token = authorization?.Split(" ").Last();
+            if (string.IsNullOrEmpty(token))
+                return Unauthorized("Missing token");
 
-        //}
+            var firebaseToken = await _firebaseAuthService.VerifyIdToken(token);
+
+            if (firebaseToken == null)
+                return Unauthorized("Invalid token");
+
+            var firebaseUid = firebaseToken.Uid;
+            var email = firebaseToken.Claims["email"]?.ToString();
+
+            return Ok(new
+            {
+                uid = firebaseUid, email
+            });
+        }
     }
 }
