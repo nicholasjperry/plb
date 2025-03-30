@@ -31,6 +31,7 @@ namespace plb_api.Services
         }
     public async Task<FirebaseToken?> VerifyIdToken(string idToken)
         {
+            // TODO: still using this function?
             // Validate token from frontend
             try
             {
@@ -48,5 +49,17 @@ namespace plb_api.Services
             // Retrieve user details from Firebase
             return await _firebaseAuth.GetUserAsync(uid);
         }
+
+    public async Task<UserRecord> CreateUser(string email, string password, string username)
+        {
+            var user = new UserRecordArgs { 
+                Email = email, 
+                Password = password,
+                DisplayName = username,
+            };
+
+            return await _firebaseAuth.CreateUserAsync(user);
+        }
     }
+
 }
