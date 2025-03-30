@@ -105,7 +105,7 @@ VDialog.h-100(
 import { ref } from 'vue';
 import { RouterView } from 'vue-router';
 import { useAuthStore } from './stores/AuthStore';
-import { UserDto } from './dtos/UserDto';
+import { RegisterUserDto } from './dtos/RegisterUserDto';
 
 // #region Stores
 
@@ -127,7 +127,7 @@ function toggleRegisterDialog() {
 }
 
 function handleRegister() {
-    authStore.registerUser(authStore.user.email, authStore.user.password);
+    authStore.registerUser(authStore.user.email, authStore.user.password, authStore.user.username);
 }
 
 function toggleShowRegisterPassword() {
@@ -136,7 +136,7 @@ function toggleShowRegisterPassword() {
 
 function closeDialog() {
     showDialog.value = false;
-    authStore.user = new UserDto();
+    authStore.user = new RegisterUserDto();
 }
 
 // #endregion
